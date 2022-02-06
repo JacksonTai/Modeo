@@ -72,7 +72,9 @@ if (isset($_POST['action'])) {
                                         // Add maximum quantity for input if product still in stock.
                                         $maxQuantity = $productStock['quantity'];
                                         // Only count product that is still in stock for subtotal price.
-                                        $subTotalPrice += ($cartItem['quantity'] * $productInfo['price']);
+                                        if ($productStock['quantity'] > 0) {
+                                             $subTotalPrice += ($cartItem['quantity'] * $productInfo['price']);
+                                        }
                                    }
                               }
                               // Force user previous cart item quantity to follow product stock.
