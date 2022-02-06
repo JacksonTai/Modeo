@@ -1,6 +1,8 @@
 <?php
 
-class billingController extends billingModel
+namespace Controller;
+
+class billing extends \Model\billing
 {
      public function addBilling($orderId, $postData)
      {

@@ -1,6 +1,8 @@
 <?php
 
-class OrderModel extends DbConfig
+namespace Model;
+
+class Order extends \Config\DbConn
 {
      private $userId;
      private $orderItems;

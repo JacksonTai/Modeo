@@ -1,6 +1,8 @@
 <?php
 
-class CartItemController extends CartItemModel
+namespace Controller;
+
+class CartItem extends \Model\CartItem
 {
      public function addCartItem($userId, $productId, $productSize, $productQty)
      {

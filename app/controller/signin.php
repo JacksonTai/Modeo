@@ -1,6 +1,8 @@
 <?php
 
-class SigninController extends SigninModel
+namespace Controller;
+
+class Signin extends \Model\Signin
 {
      public function __construct($email, $password)
      {

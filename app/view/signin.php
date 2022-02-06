@@ -6,7 +6,7 @@ if (isset($_POST['signin'])) {
      $password = $_POST['password'];
 
      // Instantiate a user object and run signin method.
-     $user = new SigninController($email, $password);
+     $user = new Controller\Signin($email, $password);
      $errorMessage = $user->signin();
 }
 

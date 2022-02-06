@@ -1,6 +1,8 @@
 <?php
 
-class ProductController extends ProductModel
+namespace Controller;
+
+class Product extends \Model\Product
 {
      public function addProduct($postData, $filesData)
      {
@@ -29,7 +31,8 @@ class ProductController extends ProductModel
           $this->delete($table, $productId, $productSize);
      }
 
-     public function updateProductStock($checkoutItems) {
+     public function updateProductStock($checkoutItems)
+     {
           $this->updateProductQty($checkoutItems);
      }
 }
