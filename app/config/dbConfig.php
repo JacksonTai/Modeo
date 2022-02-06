@@ -11,11 +11,11 @@ class DbConfig
      protected function connect()
      {
           try {
-               $dsn = sprintf('mysql:host=%s;dbname=%s', $this->hostname, $this->database);
+               $dsn = 'mysql:host=' . $this->hostname . ';dbname=%s' . $this->database;
                $pdo = new PDO($dsn, $this->username, $this->password, $this->options);
                return $pdo;
           } catch (PDOException $e) {
-               die('<h2>Failed to connect database!</h2> Error: ' . $e->getMessage()); 
+               die('<h2>Failed to connect database!</h2> Error: ' . $e->getMessage());
           }
      }
 
@@ -35,6 +35,5 @@ class DbConfig
                     die("<h2>SQL statement execution failed.</h2> Error: " . $e->getMessage());
                }
           }
-
      }
 }
