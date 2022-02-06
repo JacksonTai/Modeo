@@ -7,7 +7,7 @@ function autoLoader($classname)
      $url = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
      // assign different file directories based on where the page file located at.
-     strpos($url, 'index') ? $path = 'app/' : $path = '../';
+     strpos($url, 'app') ? $path = '../' : $path = 'app/';
 
      $dbConfigFile =  $path . 'config/dbConfig.php';
      $modelFile = $path . 'model/' . $classname . '.php';
