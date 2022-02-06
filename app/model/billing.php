@@ -1,6 +1,8 @@
 <?php
 
-class billingModel extends DbConfig
+namespace Model;
+
+class billing extends \Config\DbConn
 {
      private $orderId;
      private $firstName;

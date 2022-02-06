@@ -1,8 +1,10 @@
 <?php
 
-class CartItemModel extends DbConfig
+namespace Model;
+use Controller;
+
+class CartItem extends \Config\DbConn
 {
-     use CartItemTrait;
      private $userId;
      private $productId;
      private $productSize;
@@ -62,16 +64,13 @@ class CartItemModel extends DbConfig
           $sql = "DELETE FROM cart_item WHERE cart_item_id = ?;";
           $stmt = $this->connect()->prepare($sql);
           $this->executeStmt($stmt, [$cartItemId]);
-          
+
           $stmt = null;
      }
-}
 
-trait CartItemTrait
-{
      protected function obtainCheckoutInfo($userId)
      {
-          $product = new ProductController();
+          $product = new Controller\Product();
 
           $cartItems = $this->read($userId);
 

@@ -1,6 +1,8 @@
 <?php
 
-class SignupController extends SignupModel
+namespace Controller;
+
+class Signup extends \Model\Signup
 {
      public function __construct($postData)
      {

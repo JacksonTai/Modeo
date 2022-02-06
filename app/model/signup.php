@@ -1,6 +1,8 @@
 <?php
 
-class SignupModel extends DbConfig
+namespace Model;
+
+class Signup extends \Config\DbConn
 {
      private $email;
      private $username;

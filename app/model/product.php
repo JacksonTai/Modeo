@@ -1,6 +1,8 @@
 <?php
 
-abstract class ProductModel extends DbConfig
+namespace Model;
+
+class Product extends \Config\DbConn
 {
      private $productName;
      private $productDesc;
@@ -177,7 +179,7 @@ abstract class ProductModel extends DbConfig
 
      protected function updateProductQty($checkoutItems)
      {
-          $product = new ProductController();
+          $product = new \Controller\Product();
           foreach ($checkoutItems as $checkoutItem) {
                $productStocks = $product->readProduct(
                     'productItem',

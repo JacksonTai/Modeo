@@ -3,8 +3,8 @@ session_start();
 require '../helper/setUserType.php';
 include '../helper/autoloader.php';
 
-$cartItem = new CartItemController();
-$product = new ProductController();
+$cartItem = new Controller\CartItem();
+$product = new Controller\Product();
 
 if (isset($_GET['addToCart'])) {
      $cartItem->addCartItem(

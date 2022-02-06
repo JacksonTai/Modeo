@@ -42,7 +42,7 @@ include 'app/helper/autoloader.php';
                 <h2 class="index-title index-title--product">Product</h2>
                 <div class="index-product__container">
                     <?php
-                    $product = new ProductController();
+                    $product = new Controller\Product();
                     $productInfos = $product->readProduct('product');
                     ?>
                     <!-- Display only the first six products.  -->

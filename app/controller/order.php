@@ -1,6 +1,8 @@
 <?php
 
-class OrderController extends OrderModel
+namespace Controller;
+
+class Order extends \Model\Order
 {
      public function addOrder($userId, $orderItems, $paidAmount)
      {
