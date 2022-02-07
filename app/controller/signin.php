@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-class Signin extends \Model\Signin
+class Signin extends \model\signin
 {
      public function __construct($email, $password)
      {

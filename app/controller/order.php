@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-class Order extends \Model\Order
+class Order extends \model\order
 {
      public function addOrder($userId, $orderItems, $paidAmount)
      {

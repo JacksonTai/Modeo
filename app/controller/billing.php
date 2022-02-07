@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-class billing extends \Model\billing
+class Billing extends \model\billing
 {
      public function addBilling($orderId, $postData)
      {

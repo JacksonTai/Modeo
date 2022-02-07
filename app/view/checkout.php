@@ -3,8 +3,8 @@ session_start();
 require '../helper/setUserType.php';
 include '../helper/autoloader.php';
  
-$cartItem = new Controller\CartItem();
-$product = new Controller\Product();
+$cartItem = new controller\cartItem();
+$product = new controller\product();
 
 // Http request through Ajax.
 if (isset($_POST['action'])) {
@@ -12,7 +12,7 @@ if (isset($_POST['action'])) {
      $checkoutInfo = $cartItem->getCheckoutInfo($userInfo['user_id']);
 
      // Add order information
-     $order = new Controller\Order();
+     $order = new controller\order();
      $orderInfo = $order->addOrder(
           $userInfo['user_id'],
           $checkoutInfo['checkoutItems'],
@@ -20,7 +20,7 @@ if (isset($_POST['action'])) {
      );
 
      // Add billing information.
-     $billing = new Controller\billing();
+     $billing = new controller\billing();
      $billing->addBilling($orderInfo['orderId'], $_POST);
 
      // Remove users cart item.

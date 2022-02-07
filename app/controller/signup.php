@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-class Signup extends \Model\Signup
+class Signup extends \model\signup
 {
      public function __construct($postData)
      {

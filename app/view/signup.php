@@ -3,7 +3,7 @@ include '../helper/autoLoader.php';
 
 if (isset($_POST['create'])) {
      // Instantiate a new user object and run signup method.
-     $newUser = new Controller\Signup($_POST);
+     $newUser = new controller\signup($_POST);
      $errorMessage = $newUser->signup();
 }
 ?>

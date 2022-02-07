@@ -2,7 +2,7 @@
 
 namespace Model;
 
-class Signup extends \Config\DbConn
+class Signup extends \config\dbConn
 {
      private $email;
      private $username;

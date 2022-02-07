@@ -3,7 +3,7 @@
 namespace Model;
 use Controller;
 
-class CartItem extends \Config\DbConn
+class CartItem extends \config\dbConn
 {
      private $userId;
      private $productId;

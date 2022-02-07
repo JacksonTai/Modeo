@@ -3,7 +3,7 @@ session_start();
 require '../helper/setUserType.php';
 include '../helper/autoloader.php';
 
-$product = new Controller\Product();
+$product = new controller\product();
 $productInfo = $product->readProduct('product', $_GET['id'] ?? null);
 ?>
 

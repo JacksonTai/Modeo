@@ -2,7 +2,7 @@
 
 namespace Model;
 
-class Order extends \Config\DbConn
+class Order extends \config\dbConn
 {
      private $userId;
      private $orderItems;

@@ -2,7 +2,7 @@
 
 namespace Model;
 
-class billing extends \Config\DbConn
+class Billing extends \config\dbConn
 {
      private $orderId;
      private $firstName;

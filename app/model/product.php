@@ -2,7 +2,7 @@
 
 namespace Model;
 
-class Product extends \Config\DbConn
+class Product extends \config\dbConn
 {
      private $productName;
      private $productDesc;

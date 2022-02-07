@@ -3,7 +3,7 @@ session_start();
 require '../helper/setUserType.php';
 include '../helper/autoloader.php';
 
-$product = new Controller\Product();
+$product = new controller\product();
 
 // Http request through Ajax.
 if (isset($_POST['action'])) {

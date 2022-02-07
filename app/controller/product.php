@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-class Product extends \Model\Product
+class Product extends \model\product
 {
      public function addProduct($postData, $filesData)
      {

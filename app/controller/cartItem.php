@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-class CartItem extends \Model\CartItem
+class CartItem extends \model\cartItem
 {
      public function addCartItem($userId, $productId, $productSize, $productQty)
      {
