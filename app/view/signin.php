@@ -41,7 +41,7 @@ if (isset($_POST['signin'])) {
                     <button class="btn user-entry-form__btn" name="signin" type="submit">Sign in</button>
                </form>
                <p class="user-entry-panel__text user-entry-panel__text--btn">Don't have an account ?</p>
-               <a class="user-entry-panel__link" href="signupView.php">Create a new one</a>
+               <a class="user-entry-panel__link" href="signup.php">Create a new one</a>
           </div>
      </main>
 

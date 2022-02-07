@@ -97,7 +97,7 @@ function updateCartItem(input) {
   formData.append("cartItemId", input.dataset.cartItemId);
   formData.append("quantity", input.value);
 
-  sendFormData("cartView.php", {
+  sendFormData("cart.php", {
     method: "POST",
     body: formData,
   });
@@ -170,7 +170,7 @@ for (let removeLink of removeLinks) {
 
     let action = "action=delete";
     let cartItemId = `cartItemId=${removeLink.dataset.cartItemId}`;
-    let url = `cartView.php?${action}&${cartItemId}`;
+    let url = `cart.php?${action}&${cartItemId}`;
 
     sendFormData(url);
   });
@@ -182,6 +182,6 @@ let checkOutBtn = document.querySelector(".check-out-btn");
 checkOutBtn.addEventListener("click", () => {
   // Avoid user from checking out white nothing in cart. 
   if (subTotalDataCell.textContent.trim() !== "Subtotal: RM0") {
-    window.location.href = "checkoutView.php";
+    window.location.href = "checkout.php";
   }
 });

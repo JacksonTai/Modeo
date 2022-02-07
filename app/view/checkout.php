@@ -2,9 +2,7 @@
 session_start();
 require '../helper/setUserType.php';
 include '../helper/autoloader.php';
-
-// use Controller as c;
-
+ 
 $cartItem = new Controller\CartItem();
 $product = new Controller\Product();
 
@@ -73,6 +71,7 @@ if (isset($_POST['action'])) {
                          $checkoutItems = $checkoutInfo['checkoutItems'];
                          ?>
                          <span class="checkout-section__header-total-price"><?php echo htmlspecialchars('RM' . $checkoutInfo['totalPrice']); ?></span>
+
                     </div>
                     <div class="checkout-section__body">
                          <table class="checkout-table">
@@ -461,11 +460,6 @@ if (isset($_POST['action'])) {
                                    <?php echo htmlspecialchars('RM' . $checkoutInfo['totalPrice']); ?>
                               </td>
                          </tr>
-                         <!-- <tr>
-                              <td>
-                              <?php print_r($checkoutItems); ?>
-                              </td>
-                         </tr> -->
                     </tbody>
                </table>
           </aside>

@@ -4,7 +4,7 @@ const fetchProduct = async (table, productId = null) => {
 
   try {
     let res = await fetch(
-      `manageProductView.php?action=get&table=${table}${productId}`
+      `manageProduct.php?action=get&table=${table}${productId}`
     );
     let data = await res.json();
     return data;
@@ -87,12 +87,12 @@ addProductForm.addEventListener("submit", function (e) {
     // To identify inserting table.
     formData.append("table", "product");
 
-    sendFormData("manageProductView.php", {
+    sendFormData("manageProduct.php", {
       method: "POST",
       body: formData,
     });
     closeModal();
-    window.location.href = "manageProductView.php";
+    window.location.href = "manageProduct.php";
   }
 });
 
@@ -206,12 +206,12 @@ updateProductForm.addEventListener("submit", function (e) {
     // To identify updating product.
     formData.append("productId", updateBtn.value);
 
-    sendFormData("manageProductView.php", {
+    sendFormData("manageProduct.php", {
       method: "POST",
       body: formData,
     });
     closeModal();
-    window.location.href = "manageProductView.php";
+    window.location.href = "manageProduct.php";
   }
 });
 
@@ -304,11 +304,11 @@ deleteBtn.addEventListener("click", function () {
 
       let productId = `productId=${this.value}`;
 
-      let url = `manageProductView.php?${action}&${table}&${productId}`;
+      let url = `manageProduct.php?${action}&${table}&${productId}`;
 
       sendFormData(url);
       closeModal();
-      window.location.href = "manageProductView.php";
+      window.location.href = "manageProduct.php";
     })
     .catch((error) => {
       console.log(error);
@@ -393,7 +393,7 @@ const fillManageContent = async (productId) => {
         formData.append("productSize", itemContainer.dataset.size);
         formData.append("productQty", inputQty.value);
 
-        sendFormData("manageProductView.php", {
+        sendFormData("manageProduct.php", {
           method: "POST",
           body: formData,
         });
@@ -406,11 +406,11 @@ const fillManageContent = async (productId) => {
         let productId = `productId=${itemContainer.dataset.productId}`;
         let size = `productSize=${itemContainer.dataset.size}`;
 
-        let url = `manageProductView.php?${action}&${table}&${productId}&${size}`;
+        let url = `manageProduct.php?${action}&${table}&${productId}&${size}`;
 
         sendFormData(url);
         closeModal();
-        window.location.href = "manageProductView.php";
+        window.location.href = "manageProduct.php";
       });
     }
   } catch (error) {
@@ -467,12 +467,12 @@ addProductItemForm.addEventListener("submit", function (e) {
     // To identify updating product.
     formData.append("productId", addProductItemBtn.value);
 
-    sendFormData("manageProductView.php", {
+    sendFormData("manageProduct.php", {
       method: "POST",
       body: formData,
     });
     closeModal();
-    window.location.href = "manageProductView.php";
+    window.location.href = "manageProduct.php";
   }
 });
 

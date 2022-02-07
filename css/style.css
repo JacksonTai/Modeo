@@ -18,16 +18,16 @@ Note: set base styling for basic HTML elements.
 
 #3. App/view
 Note: styling for php file in app/view folder.
-  -[allProductView.php]
-  -[cartView.php]
-  -[checkoutView.php]
-  -[manageProductView.php]
-  -[manageUserView.php]
+  -[allProduct.php]
+  -[cart.php]
+  -[checkout.php]
+  -[manageProduct.php]
+  -[manageUser.php]
   -[paymentSuccess.php]
-  -[productView.php]
-  -[profileView.php]
-  -[signinView.php]
-  -[signupView.php]
+  -[product.php]
+  -[profile.php]
+  -[signin.php]
+  -[signup.php]
 -----
 
 #4. Template
@@ -238,9 +238,9 @@ button {
 
 /* ############## 3. App/view ############# */
 
-/* ---------- [allProductView.php] ----------- */
+/* ---------- [allProduct.php] ----------- */
 
-/* ---------- [cartView.php] ----------- */
+/* ---------- [cart.php] ----------- */
 .cart-section {
   margin: 1.2rem 0;
 }
@@ -331,7 +331,7 @@ button {
   font-weight: 700;
 }
 
-/* ---------- [checkoutView.php] ----------- */
+/* ---------- [checkout.php] ----------- */
 .checkout-section {
   padding: 1em;
 }
@@ -508,7 +508,7 @@ button {
   text-align: right;
 }
 
-/* -------- [manageProductView.php] --------- */
+/* -------- [manageProduct.php] --------- */
 .manage-product-main {
   display: flex;
   align-items: center;
@@ -763,7 +763,7 @@ button {
   margin: 0 auto;
 }
 
-/* ---------- [manageUserView.php] ----------- */
+/* ---------- [manageUser.php] ----------- */
 
 /* ---------- [paymentSuccess.php] ----------- */
 .payment-success-main {
@@ -818,7 +818,7 @@ button {
   margin: 2rem auto 0;
 }
 
-/* ---------- [productView.php] ----------- */
+/* ---------- [product.php] ----------- */
 .product-main {
   display: flex;
   flex-direction: column;
@@ -892,7 +892,7 @@ button {
   border-radius: 0;
 }
 
-/* ---------- [profileView.php] ----------- */
+/* ---------- [profile.php] ----------- */
 .profile-title {
   text-align: center;
   padding: 1em;
@@ -924,8 +924,8 @@ button {
 }
 
 /* Note: both pages use identical styling 
-   --------- [signinView.php] ----------- 
-   --------- [signupView.php] ----------- 
+   --------- [signin.php] ----------- 
+   --------- [signup.php] ----------- 
 */
 .user-entry-main,
 .user-entry-panel,
@@ -1374,7 +1374,7 @@ button {
   }
   /* ############## 3. App/view ############# */
 
-  /* ---------- [checkoutView.php] ----------- */
+  /* ---------- [checkout.php] ----------- */
   .checkout-form__item-wrapper {
     flex-direction: row;
     justify-content: space-between;
@@ -1433,7 +1433,7 @@ button {
 @media (min-width: 986px) {
   /* ############## 3. App/view ############# */
 
-  /* -------- [manageProductView.php] --------- */
+  /* -------- [manageProduct.php] --------- */
   .manage-product__item--add {
     width: 20rem;
     aspect-ratio: 1/1.2;
@@ -1450,7 +1450,7 @@ button {
 @media (min-width: 1245px) {
   /* ############## 3. App/view ############# */
 
-  /* ---------- [checkoutView.php] ----------- */
+  /* ---------- [checkout.php] ----------- */
   .checkout-main {
     margin: 0;
   }
@@ -1483,7 +1483,7 @@ button {
     display: none;
   }
 
-  /* ---------- [cartView.php] ----------- */
+  /* ---------- [cart.php] ----------- */
   .cart-table__data {
     border-bottom: 1px solid var(--clr-shadow-grey);
   }
@@ -1505,7 +1505,7 @@ button {
     border: none;
   }
 
-  /* ---------- [productView.php] ----------- */
+  /* ---------- [product.php] ----------- */
   .product-main {
     flex-direction: row;
     justify-content: center;

@@ -60,7 +60,7 @@ include 'app/helper/autoloader.php';
                         ?>
 
                         <div class="index-product__item">
-                            <a href="app/view/productView.php?id=<?php echo htmlspecialchars($productInfo['product_id']); ?>">
+                            <a href="app/view/product.php?id=<?php echo htmlspecialchars($productInfo['product_id']); ?>">
 
                                 <img src="data:image/jpg;charset=utf8;base64,<?php echo htmlspecialchars($productInfo['image']); ?>" alt="<?php echo htmlspecialchars($productInfo['name']) ?>">
                                 <p class="index-product__item-name"><?php echo htmlspecialchars($productInfo['name']); ?></p>
@@ -83,7 +83,7 @@ include 'app/helper/autoloader.php';
 
                 <?php if (count($productInfos) > 6) : ?>
 
-                    <a class="index-product__cta-btn" href="app/view/allProductView.php">See more</a>
+                    <a class="index-product__cta-btn" href="app/view/allProduct.php">See more</a>
 
                 <?php endif; ?>
 
@@ -112,12 +112,12 @@ include 'app/helper/autoloader.php';
             <section class="index-section index-section--home-admin">
                 <div class="index-panel">
                     <h2 class="index-panel__title">
-                        <a href="app/view/manageProductView.php">Manage products</a>
+                        <a href="app/view/manageProduct.php">Manage products</a>
                     </h2>
                 </div>
                 <div class="index-panel">
                     <h2 class="index-panel__title">
-                        <a href="app/view/manageUserView.php">Manage users</a>
+                        <a href="app/view/manageUser.php">Manage users</a>
                     </h2>
                 </div>
             </section>

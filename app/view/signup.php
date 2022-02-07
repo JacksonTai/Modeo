@@ -80,7 +80,7 @@ if (isset($_POST['create'])) {
                     <button class="btn user-entry-form__btn" name="create" type="submit">Create</button>
                </form>
                <p class="user-entry-panel__text user-entry-panel__text--btn">Already have an account ?</p>
-               <a class="user-entry-panel__link" href="signinView.php">Sign in</a>
+               <a class="user-entry-panel__link" href="signin.php">Sign in</a>
           </div>
      </main>
 

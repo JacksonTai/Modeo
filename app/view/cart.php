@@ -88,7 +88,7 @@ if (isset($_POST['action'])) {
                                    </td>
                                    <td class="cart-table__data cart-table__data--product-info">
                                         <div class="cart-table__data-wrapper">
-                                             <a href="productView.php?id=<?php echo htmlspecialchars($productInfo['product_id']) ?>"><?php echo htmlspecialchars($productInfo['name']); ?></a>
+                                             <a href="product.php?id=<?php echo htmlspecialchars($productInfo['product_id']) ?>"><?php echo htmlspecialchars($productInfo['name']); ?></a>
                                              <?php echo htmlspecialchars('Size: ' . $cartItem['size']); ?>
                                              <a class="cart-table__remove-link" data-cart-item-id="<?php echo htmlspecialchars($cartItem['cart_item_id']); ?>">Remove</a>
                                         </div>

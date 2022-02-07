@@ -90,7 +90,7 @@ paymentForm.addEventListener("submit", function (e) {
     let formData = new FormData(deliveryForm);
     formData.append("action", "add");
 
-    sendFormData("checkoutView.php", {
+    sendFormData("checkout.php", {
       method: "POST",
       body: formData,
     });
@@ -99,7 +99,7 @@ paymentForm.addEventListener("submit", function (e) {
     formData = new FormData();
     formData.append("action", "add");
 
-    sendFormData("checkoutView.php"), {
+    sendFormData("checkout.php"), {
       method: "POST",
       body: formData,
     }

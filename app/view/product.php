@@ -40,7 +40,7 @@ $productInfo = $product->readProduct('product', $_GET['id'] ?? null);
 
                <?php if ($productInStock) : ?>
 
-                    <form class="add-to-cart-form" action="cartView.php">
+                    <form class="add-to-cart-form" action="cart.php">
                          <div class="add-to-cart-form__item-container">
                               <label for="productSize">Size:</label>
                               <select class="product-size" name="productSize" id="productSize">
@@ -66,7 +66,7 @@ $productInfo = $product->readProduct('product', $_GET['id'] ?? null);
 
                               <?php elseif ($userType == 'guest') : ?>
 
-                                   <a class="btn add-to-cart-btn" href="signinView.php">Add to cart</a>
+                                   <a class="btn add-to-cart-btn" href="signin.php">Add to cart</a>
 
                               <?php endif; ?>
 

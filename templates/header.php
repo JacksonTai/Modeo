@@ -1,21 +1,19 @@
 <?php
-// get the page url.
-$url = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-
-// assign different file directories based on where the page file located at.
-strpos($url, 'index') ? $path = '' : $path = '../../';
-strpos($url, 'index') ? $appPath = 'app/' : $appPath = '../';
+// Change file directories for index.php and files in app/view.
+$url = $_SERVER['REQUEST_URI'];
+strpos($url, 'app') ? $imgPath = '../../' : $imgPath = '';
+strpos($url, 'app') ? $appPath = '../' : $appPath = 'app/';
 ?>
 
 <header class="index-header">
      <h1 class="main-header__logo">
-          <a class="main-header__logo-link" href="<?php echo $path; ?>index.php">
-               <img class="main-header__logo-img" src="<?php echo $path; ?>img/logo.jpg" alt="Modeo logo">
+          <a class="main-header__logo-link" href="<?php echo $imgPath; ?>index.php">
+               <img class="main-header__logo-img" src="<?php echo $imgPath; ?>img/logo.jpg" alt="Modeo logo">
           </a>
      </h1>
      <nav class="index-header__nav">
           <ul class="index-header__nav-list">
-               <?php if (strpos($url, 'index')) : ?>
+               <?php if (!strpos($url, 'app')) : ?>
                     <?php if ($userType == 'guest' || $userType == 'normal') : ?>
                          <li class="index-header__nav-item">
                               <a class="index-header__nav-link" href="#index-home">Home</a>
@@ -36,27 +34,27 @@ strpos($url, 'index') ? $appPath = 'app/' : $appPath = '../';
                <div class="index-header__btn-container">
                     <?php if (isset($userInfo)) : ?>
                          <?php if ($userType == 'normal') : ?>
-                              <a class="index-header__btn index-header__btn--cart" href="<?php echo $appPath; ?>view/cartView.php">
+                              <a class="index-header__btn index-header__btn--cart" href="<?php echo $appPath; ?>view/cart.php">
                                    <!-- <i class="fas fa-shopping-cart"></i> -->
-                                   <img src="<?php echo $path; ?>img/icons/cart.jpg" alt="Cart">
+                                   <img src="<?php echo $imgPath; ?>img/icons/cart.jpg" alt="Cart">
                               </a>
                          <?php endif; ?>
-                         <a class="index-header__btn index-header__btn--profile" href="<?php echo $appPath; ?>view/profileView.php">
+                         <a class="index-header__btn index-header__btn--profile" href="<?php echo $appPath; ?>view/profile.php">
                               <!-- <i class="fas fa-user"></i> -->
-                              <img src="<?php echo $path; ?>img/icons/user.jpg" alt="User">
+                              <img src="<?php echo $imgPath; ?>img/icons/user.jpg" alt="User">
                          </a>
                          <a class="index-header__btn index-header__btn--signin" href="<?php echo $appPath; ?>helper/logout.php">
                               <!-- <i class="fas fa-sign-in-alt"></i> -->
-                              <img src="<?php echo $path; ?>img/icons/signin.jpg" alt="Icon">
+                              <img src="<?php echo $imgPath; ?>img/icons/signin.jpg" alt="Icon">
                               Logout
                          </a>
                     <?php else : ?>
-                         <a class="index-header__btn index-header__btn--signin" href="<?php echo $appPath; ?>view/signinView.php">
+                         <a class="index-header__btn index-header__btn--signin" href="<?php echo $appPath; ?>view/signin.php">
                               <!-- <i class="fas fa-sign-in-alt"></i> -->
-                              <img src="<?php echo $path; ?>img/icons/signin.jpg" alt="Icon">
+                              <img src="<?php echo $imgPath; ?>img/icons/signin.jpg" alt="Icon">
                               Sign in
                          </a>
-                         <a class="index-header__btn index-header__btn--signup" href="<?php echo $appPath; ?>view/signupView.php">Sign up</a>
+                         <a class="index-header__btn index-header__btn--signup" href="<?php echo $appPath; ?>view/signup.php">Sign up</a>
                     <?php endif; ?>
                </div>
           <?php endif; ?>
