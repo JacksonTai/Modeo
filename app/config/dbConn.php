@@ -16,8 +16,12 @@ class DbConn
      protected function connect()
      {
           try {
-               $dsn = 'mysql:host=' . $this->hostname . ';dbname=' . $this->database;
-               $pdo = new PDO($dsn, $this->username, $this->password, $this->options);
+               $pdo = new PDO(
+                    'mysql:host=' . $this->hostname . ';dbname=' . $this->database,
+                    $this->username,
+                    $this->password,
+                    $this->options
+               );
                return $pdo;
           } catch (PDOException $e) {
                die('<h2>Failed to connect database!</h2> Error: ' . $e->getMessage());
