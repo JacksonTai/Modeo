@@ -76,18 +76,26 @@ class CartItem extends \Config\DbConn
 
           $checkoutItems = [];
           $totalPrice = 0;
-
+  
           foreach ($cartItems as $cartItem) {
                $productStocks = $product->readProduct('productItem', $cartItem['product_id']);
                $productInfo = $product->readProduct('product', $cartItem['product_id']);
-               // Only calculate total price of product that is still in stock.
+
                foreach ($productStocks as $productStock) {
-                    if ($productStock['size'] == $cartItem['size']) {
-                         $totalPrice += ($cartItem['quantity'] * $productInfo['price']);
-                         array_push($checkoutItems, array_merge($cartItem, $productInfo));
+                    // Match cart item product with product in stock.
+                    if (
+                         $cartItem['product_id'] == $productStock['product_id'] &&
+                         $cartItem['size'] == $productStock['size']
+                    ) {
+                         // Only calculate(total price) and add product that is still in stock.
+                         if ($productStock['quantity'] > 0) {
+                              $totalPrice += ($cartItem['quantity'] * $productInfo['price']);
+                              array_push($checkoutItems, array_merge($cartItem, $productInfo));
+                         }
                     }
                }
           }
+
           return ['totalPrice' => $totalPrice, 'checkoutItems' => $checkoutItems];
      }
 }
