@@ -4,7 +4,7 @@ A shoe e-commerce website that allows customers to purchase products through a s
 ---
 
 Developed using: 
-- Plain HTML & CSS (Responsive design)
+- Mobile-first design strategy
 - JavaScript Ajax
 - PHP OOP concept
 - MVC design pattern
