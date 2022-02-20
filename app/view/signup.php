@@ -86,6 +86,7 @@ if (isset($_POST['create'])) {
      </main>
 
      <?php include '../../templates/footer.php' ?>
+     <script src="../../js/script.js"></script>
      <script src="../../js/signup.js"></script>
 </body>
 
