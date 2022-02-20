@@ -3,7 +3,8 @@ A shoe e-commerce website that allows customers to purchase products through a s
 
 ---
 
-## View Live: https://modeo.000webhostapp.com/
+## View Live:
+https://modeo.000webhostapp.com/
 
 ---
 
