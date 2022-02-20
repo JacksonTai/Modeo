@@ -3,7 +3,7 @@ A shoe e-commerce website that allows customers to purchase products through a s
 
 ---
 
-Developed using: 
+## Developed using: 
 - Mobile-first design strategy
 - JavaScript Ajax
 - PHP OOP concept
