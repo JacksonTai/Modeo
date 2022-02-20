@@ -32,7 +32,7 @@ const sendFormData = async (url, options = null) => {
     // console.log(data);  
   } catch (error) {
     console.log(error);
-    alert(error);
+    // alert(error);
   }
 };
 

@@ -1,16 +1,25 @@
-document.getElementById("iban").addEventListener("input", function (e) {
+let prices = [7,1,5,3,6,4]
 
-  let target = e.target;
-  let position = target.selectionEnd;
-  let length = target.value.length;
+prices.push('d')
 
-  // console.log(this.value);
-  // console.log(position);
+console.log(prices);
 
-  // target.value = target.value.replace(/[^\dA-Z]/g, "")
-  // console.log(target.value.replace(/(.{4})/g, "$1 "));
+// let maxProfit = 0;
+// let lowestBuyPrice = prices[0]; // first day stock price
 
-  target.value = target.value.replace(/[^\dA-Z]/g, "").replace(/(.{4})/g, "$1 ").trim();
-  
-  target.selectionEnd = position += target.value.charAt(position - 1) === " " && target.value.charAt(length - 1) === " " && length !== target.value.length ? 1 : 0;
-});
+// for (let i = 0; i < prices.length - 1; i++) {
+//   let sellPrice = prices[i + 1];
+//   let buyPrice = prices[i];
+//   let profit = sellPrice - buyPrice;
+
+//   if (profit > 0) {
+//     if (buyPrice < lowestBuyPrice) {
+//       lowestBuyPrice = buyPrice;
+//     }
+//     if ((sellPrice - lowestBuyPrice) > maxProfit) {
+//       maxProfit = sellPrice - lowestBuyPrice;
+//     }
+//   }
+// }
+
+// console.log(maxProfit);

@@ -63,8 +63,14 @@ class Billing extends \config\dbConn
           $stmt = null;
      }
 
-     protected function read()
+     protected function read($orderID)
      {
-     }
+          $sql = "SELECT * FROM billing_detail 
+                  WHERE order_id = ?;";
+          $stmt = $this->connect()->prepare($sql);
+          $this->executeStmt($stmt, [$orderID]);
 
+          $billingDetail = $stmt->fetch();
+          return $billingDetail;
+     }
 }

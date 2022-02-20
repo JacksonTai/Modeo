@@ -1,5 +1,6 @@
 <?php
-include '../helper/autoLoader.php';
+include '../helper/autoloader.php';
+include '../helper/setUserType.php';
 
 if (isset($_POST['signin'])) {
      $email = $_POST['email'];
@@ -46,6 +47,7 @@ if (isset($_POST['signin'])) {
      </main>
 
      <?php include '../../templates/footer.php' ?>
+     <script src="../../js/script.js"></script>
      <script src="../../js/signin.js"></script>
 </body>
 

@@ -10,8 +10,8 @@ class Billing extends \model\billing
           $this->create();
      }
 
-     public function getBilling($userId = null, $orderId = null)
+     public function readBilling($orderId)
      {
-          return $this->read($userId, $orderId);
+          return $this->read($orderId);
      }
 }

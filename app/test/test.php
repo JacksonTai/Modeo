@@ -26,17 +26,19 @@ if (!$conn) {
 </head>
 
 <body>
-     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
+
+     <!-- <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
           <label for="iban">iban</label>
           <input id="iban" type="text" name="iban" />
           <input type="file" name="varName">
           <button type="submit" name="btnName">Submit</button>
-     </form>
+     </form> -->
      <?php
-     date_default_timezone_set("Asia/Kuala_Lumpur");
-     echo date('Y-m-d');
-     echo '<br>';
-     echo date('H:i:s');
+
+     // date_default_timezone_set("Asia/Kuala_Lumpur");
+     // echo date('Y-m-d');
+     // echo '<br>';
+     // echo date('H:i:s');
      // if (isset($_POST['btnName'])) {
      //      // Get temporary name of the file
      //      $tmpName = $_FILES['varName']['tmp_name'];

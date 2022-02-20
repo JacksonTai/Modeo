@@ -53,4 +53,32 @@ class Order extends \config\dbConn
           }
           return ['orderId' => $orderId, 'orderDate' => $date, 'orderTime' => $time];
      }
+
+     protected function read($basedOn, $id)
+     {
+          if ($basedOn == 'userId') {
+               $sql = "SELECT * FROM `order` o
+               INNER JOIN order_item oi ON o.order_id = oi.order_id
+               WHERE o.`user_id` = ?;";
+          }
+
+          if ($basedOn == 'orderItemId') {
+               $sql = "SELECT * FROM `order` o
+               INNER JOIN order_item oi ON o.order_id = oi.order_id
+               WHERE oi.`order_item_id` = ?;";
+          }
+
+          $stmt = $this->connect()->prepare($sql);
+          $this->executeStmt($stmt, [$id]);
+
+          if ($basedOn == 'orderItemId') {
+               $orderInfo = $stmt->fetch();
+          }
+
+          if ($basedOn == 'userId') {
+               $orderInfo = $stmt->fetchAll();
+          }
+          return $orderInfo;
+     }
 }
+// 

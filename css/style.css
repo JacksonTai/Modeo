@@ -23,11 +23,13 @@ Note: styling for php file in app/view folder.
   -[checkout.php]
   -[manageProduct.php]
   -[manageUser.php]
+  -[orderDetail.php & orderHistory.php]
+  -[orderDetail.php]
+  -[orderHistory.php]
   -[paymentSuccess.php]
   -[product.php]
   -[profile.php]
-  -[signin.php]
-  -[signup.php]
+  -[signin.php & signup.php]
 -----
 
 #4. Template
@@ -43,9 +45,8 @@ Note: styling for index.php.
   -[layout: section]
   .[section: home-admin]
   .[section: home]
-  .[section: product]
   .[section: about]
-  .[section: contact]
+  .[section: product]
 -----
 
 #6. Media Query
@@ -59,7 +60,6 @@ Note: responsive design for all presentation file.
 */
 
 /* ############## 1. Reset ############# */
-
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -76,7 +76,7 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-  line-height: 1.3;
+  line-height: 1.5;
 }
 
 ::-webkit-scrollbar {
@@ -111,7 +111,6 @@ html {
   --ff-montserrat-text: "montserrat-light";
   /* Custom size */
   --layout-header-height: 60px;
-  --layout-footer-height: 120px;
 }
 
 /* --------- [Fonts] ---------- */
@@ -239,6 +238,41 @@ button {
 /* ############## 3. App/view ############# */
 
 /* ---------- [allProduct.php] ----------- */
+.all-product__title {
+  margin: calc(var(--layout-header-height) + 3rem) auto 2rem;
+  text-align: center;
+}
+
+.all-product__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 16rem);
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto 3rem;
+}
+
+.all-product__item {
+  margin: 2rem 1rem;
+}
+
+.all-product__item:hover {
+  opacity: 0.8;
+}
+
+.all-product__item:hover .all-product__item-name {
+  border-bottom: 1px solid black;
+}
+
+.all-product__item-img {
+  display: block;
+  max-width: 15rem;
+  margin: 0 auto 3rem;
+}
+
+.all-product__item-name,
+.all-product__item-price {
+  text-align: center;
+}
 
 /* ---------- [cart.php] ----------- */
 .cart-section {
@@ -246,7 +280,7 @@ button {
 }
 
 .cart-title {
-  margin: calc(var(--layout-header-height) + 2rem) auto 0;
+  margin: calc(var(--layout-header-height) + 3rem) auto 0;
   text-align: center;
 }
 
@@ -765,6 +799,137 @@ button {
 
 /* ---------- [manageUser.php] ----------- */
 
+/* Note: both pages use identical styling 
+   --- [orderDetail.php & orderHistory.php] ----- 
+*/
+
+.order-detail__dialog,
+.order-history__item {
+  width: 80%;
+  max-width: 50rem;
+  margin: 0 auto 5rem;
+  padding: 2em 2.5em;
+  box-shadow: 0.5em 0.5em 2.5em var(--clr-shadow-grey);
+  border-radius: 0.5em;
+}
+
+.order-detail__upper-content,
+.order-history__item-upper-content {
+  display: flex;
+  align-items: center;
+  padding: 0 0 1em;
+}
+
+.order-detail__img,
+.order-history__item-img {
+  display: block;
+  width: 30%;
+  height: 30%;
+  max-width: 10rem;
+  margin: 0 2rem 0 0;
+}
+
+.order-detail__info:first-of-type,
+.order-history__item-info:first-of-type {
+  font-weight: 700;
+}
+
+.order-detail__lower-content,
+.order-history__item-lower-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1em 0 0;
+  border-top: 2px solid var(--clr-shadow-grey);
+}
+
+.order-detail__order-total .order-history__order-total {
+  font-weight: 700;
+}
+
+.buy-again-btn {
+  margin: 1rem 0;
+  border-radius: 0.5em;
+}
+
+/* ---------- [orderDetail.php] ----------- */
+.order-detail__title,
+.order-detail__back-btn {
+  width: 80%;
+  max-width: 50rem;
+}
+
+.order-detail__title {
+  margin: calc(var(--layout-header-height) + 5rem) auto 0;
+}
+
+.order-detail__back-btn {
+  display: block;
+  margin: 1rem auto 2rem;
+  word-spacing: 0.3rem;
+}
+
+.order-detail__delivery-title {
+  width: fit-content;
+  margin: 2rem 0 1rem;
+  border-bottom: 1px solid #000000;
+  font-family: var(--ff-montserrat-text);
+}
+
+.order-detail__delivery-content {
+  margin: 1.5rem 0 0;
+}
+
+.order-detail__delivery-contact {
+  margin: 1rem 0 0;
+}
+
+/* ---------- [orderHistory.php] ----------- */
+.order-history-main {
+  min-height: 0;
+}
+
+.order-history__title {
+  margin: calc(var(--layout-header-height) + 3rem) auto 2rem;
+  text-align: center;
+}
+
+.order-history__item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 70vh;
+  margin: 0 auto;
+}
+
+.no-order-content {
+  margin: 0 auto;
+}
+
+.no-order__img {
+  display: block;
+  margin: 2rem auto;
+}
+
+.no-order__title,
+.no-order__msg {
+  text-align: center;
+}
+
+.order-history__item-upper-content {
+  cursor: pointer;
+}
+
+.order-history__item-upper-content:hover {
+  opacity: 0.6;
+}
+
+.order-history__empty-msg {
+  text-align: center;
+}
+
 /* ---------- [paymentSuccess.php] ----------- */
 .payment-success-main {
   display: flex;
@@ -773,8 +938,9 @@ button {
 
 .payment-success__panel {
   width: fit-content;
-  margin: 0 auto;
-  padding: 3.5em;
+  max-width: 80%;
+  margin: 5rem auto;
+  padding: 2.5em;
   box-shadow: 0.5em 0.5em 2.5em var(--clr-shadow-grey);
   border-radius: 0.5em;
 }
@@ -785,7 +951,7 @@ button {
 
 .payment-success__title {
   text-align: center;
-  color: #2ACE99;
+  color: #2ace99;
 }
 
 .payment-success-icon {
@@ -793,12 +959,17 @@ button {
   margin: 2rem auto 3rem;
 }
 
-.payment-success__panel-body {
+.payment-success__panel-body,
+.payment-success__item {
   display: flex;
   justify-content: space-between;
 }
 
-.payment-success__label, 
+.payment-success__panel-body {
+  flex-direction: column;
+}
+
+.payment-success__label,
 .payment-success__content {
   margin: 0.5rem 0;
 }
@@ -893,19 +1064,25 @@ button {
 }
 
 /* ---------- [profile.php] ----------- */
-.profile-title {
-  text-align: center;
-  padding: 1em;
+.profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(98vh - var(--layout-header-height));
 }
 
 .profile-content-container {
   width: fit-content;
   max-width: 80%;
-  min-height: 60vh;
-  margin: 8rem 0 4rem;
+  margin: 0 auto;
   padding: 2em;
   box-shadow: 0.5em 0.5em 2.5em var(--clr-shadow-grey);
   border-radius: 0.5em;
+}
+
+.profile-title {
+  text-align: center;
+  padding: 1em;
 }
 
 .profile-img {
@@ -924,8 +1101,7 @@ button {
 }
 
 /* Note: both pages use identical styling 
-   --------- [signin.php] ----------- 
-   --------- [signup.php] ----------- 
+   --- [signin.php & signup.php] ----- 
 */
 .user-entry-main,
 .user-entry-panel,
@@ -1055,19 +1231,24 @@ button {
 }
 
 /* ------------ [footer.php] ----------- */
-.main-footer {
-  position: relative;
-  bottom: 0;
-  height: var(--layout-footer-height);
+.template-footer {
   width: 100%;
   padding: 1em;
   background-color: #000000ad;
   color: #ffffff;
 }
 
-.main-footer__copyright {
+.template-footer__title {
+  width: fit-content;
+  margin: 1rem auto;
+  padding: 0.2em 2em;
+  border-bottom: 1px solid #ffffff;
+  text-align: center;
+}
+
+.template-footer__copyright {
   width: max-content;
-  margin: 4em auto 0;
+  margin: 4rem auto 1.5rem;
   font-size: 0.8rem;
 }
 
@@ -1132,11 +1313,6 @@ button {
   border: 1px solid var(--clr-primary);
   border-radius: 2em;
   text-align: center;
-}
-
-.index-header__btn:hover {
-  background-color: var(--clr-primary);
-  color: #ffffff;
 }
 
 /* Mobile view: hamburger menu */
@@ -1238,8 +1414,8 @@ button {
   display: flex;
   align-items: center;
   flex-direction: column;
-  align-content: center;
-  height: max-content;
+  justify-content: center;
+  min-height: calc(100vh - var(--layout-header-height));
   background: linear-gradient(#fde3d3, #ffffff);
 }
 
@@ -1282,6 +1458,10 @@ button {
 }
 
 /* ...... [section: product] ...... */
+.index-section--product {
+  margin: 3rem 0;
+}
+
 .index-title--product {
   margin: 2rem auto 1rem;
 }
@@ -1306,6 +1486,10 @@ button {
 
 .index-product__item:hover .index-product__item-name {
   border-bottom: 1px solid black;
+}
+
+.index-product__item-img {
+  width: 100%;
 }
 
 .index-product__item-name,
@@ -1357,8 +1541,6 @@ button {
   order: 1;
   text-align: justify;
 }
-
-/* ...... [section: contact] ...... */
 
 /* ############## 6. Media Query ############# */
 
@@ -1504,6 +1686,25 @@ button {
   .cart-table__data--subtotal {
     border: none;
   }
+  /* Note: both pages use identical styling 
+   --- [orderDetail.php & orderHistory.php] ----- 
+  */
+  .order-detail__lower-content,
+  .order-history__item-lower-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* ---------- [orderDetail.php] ----------- */
+  .order-detail__delivery-content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .order-detail__delivery-content {
+    margin: 0;
+  }
 
   /* ---------- [product.php] ----------- */
   .product-main {
@@ -1638,7 +1839,6 @@ button {
   .index-section--home {
     flex-direction: row;
     justify-content: center;
-    height: 92vh;
     padding: 0 7em 0 0;
   }
 

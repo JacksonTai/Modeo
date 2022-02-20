@@ -1,5 +1,6 @@
 <?php
-include '../helper/autoLoader.php';
+include '../helper/autoloader.php';
+include '../helper/setUserType.php';
 
 if (isset($_POST['create'])) {
      // Instantiate a new user object and run signup method.

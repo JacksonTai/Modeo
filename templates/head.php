@@ -10,6 +10,5 @@ strpos($url, 'app') ? $path = '../../' : $path = '';
 <meta name="copyright" content="Copyright <?php echo date('Y'); ?> - Modeo">
 <meta name="description" content="Welcome to Modeo!">
 <meta name="author" content="Jackson Tai">
-<script src="https://kit.fontawesome.com/a64d2d03df.js" crossorigin="anonymous"></script>
 <link rel="shortcut icon" href="<?php echo $path ?>img/icons/logo.ico" type="image/x-icon">
 <link rel="stylesheet" href="<?php echo $path ?>css/style.css">

@@ -2,6 +2,7 @@
 session_start();
 require '../helper/setUserType.php';
 include '../helper/autoloader.php';
+include '../helper/redirector.php';
 
 $product = new controller\product();
 

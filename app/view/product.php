@@ -69,7 +69,7 @@ $productInfo = $product->readProduct('product', $_GET['id'] ?? null);
                                    <a class="btn add-to-cart-btn" href="signin.php">Add to cart</a>
 
                               <?php endif; ?>
-
+                                        
                          </div>
                     </form>
 

@@ -2,6 +2,7 @@
 session_start();
 require 'app/helper/setUserType.php';
 include 'app/helper/autoloader.php';
+$product = new controller\product();
 ?>
 
 <!DOCTYPE html>
@@ -24,27 +25,32 @@ include 'app/helper/autoloader.php';
     <?php if ($userType == 'guest' || $userType == 'normal') : ?>
 
         <main class="index-main">
-            <section class="index-section index-section--home" id="index-home">
-                <img class="index-home__hero-img" src="img/home.png" alt="Poster">
+            <section class="index-section index-section--home">
+                <img class="index-home__hero-img" src="img/home.png" alt="Shoe Poster">
                 <div class="index-home__intro-container">
                     <h2 class="index-title index-title--home">
                         The sneaker makes the <span class="index-title-highlighted">man.</span>
                     </h2>
                     <p class="index-home__content">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum cumque nesciunt rspiciatis nisi
-                        consequuntur eum? Voluptate.
-                        <?php echo htmlspecialchars($userInfo['username'] ?? ''); ?>
+                        Balanced between functionality, aesthetics and minimalism with a less
+                        is more approach to design.
                     </p>
                     <a class="btn index-home__cta-btn" href="#index-product">Discover</a>
                 </div>
             </section>
-            <section class="index-section index-section--product" id="index-product">
-                <h2 class="index-title index-title--product">Product</h2>
+            <section class="index-section index-section--about" id="index-about">
+                <h2 class="index-title">About Modeo</h2>
+                <div class="index-about__container">
+                    <p class="index-about__content">We dress a generation of urban professionals, creatives and innovators that need functional yet modern
+                        products for their everyday lives. We have sold more than 200K pairs. We have customers in more than
+                        40 countries. We sell in more than 212 shops all around the globe.</p>
+                    <img class="index-about__img" src="img/about.jpg" alt="Modeo Outlet">
+                </div>
+            </section>
+            <section class="index-section index-section--product">
+                <h2 class="index-title index-title--product">Trending Product</h2>
                 <div class="index-product__container">
-                    <?php
-                    $product = new controller\product();
-                    $productInfos = $product->readProduct('product');
-                    ?>
+                    <?php $productInfos = $product->readProduct('product'); ?>
                     <!-- Display only the first six products.  -->
                     <?php foreach (array_slice($productInfos, 0, 6) as $productInfo) : ?>
 
@@ -62,7 +68,7 @@ include 'app/helper/autoloader.php';
                         <div class="index-product__item">
                             <a href="app/view/product.php?id=<?php echo htmlspecialchars($productInfo['product_id']); ?>">
 
-                                <img src="data:image/jpg;charset=utf8;base64,<?php echo htmlspecialchars($productInfo['image']); ?>" alt="<?php echo htmlspecialchars($productInfo['name']) ?>">
+                                <img class="index-product__item-img" src="data:image/jpg;charset=utf8;base64,<?php echo htmlspecialchars($productInfo['image']); ?>" alt="<?php echo htmlspecialchars($productInfo['name']) ?>">
                                 <p class="index-product__item-name"><?php echo htmlspecialchars($productInfo['name']); ?></p>
 
                                 <?php if ($productInStock) : ?>
@@ -83,27 +89,11 @@ include 'app/helper/autoloader.php';
 
                 <?php if (count($productInfos) > 6) : ?>
 
-                    <a class="index-product__cta-btn" href="app/view/allProduct.php">See more</a>
+                    <a class="index-product__cta-btn" href="app/view/allProduct.php">View all</a>
 
                 <?php endif; ?>
 
             </section>
-            <section class="index-section index-section--about" id="index-about">
-                <h2 class="index-title">About Modeo</h2>
-                <div class="index-about__container">
-                    <p class="index-about__content">We dress a generation of urban professionals, creatives and innovators that need functional yet modern
-                        products for their everyday lives. We have sold more than 200K pairs. We have customers in more than
-                        40 countries. We sell in more than 212 shops all around the globe.</p>
-                    <img class="index-about__img" src="img/about.jpg" alt="">
-                </div>
-            </section>
-            <!-- <section class="index-section index-section--contact" id="index-contact">
-            <h2 class="index-title">Get in touch</h2>
-            <p></p>
-            <form action="">
-                
-            </form>
-        </section> -->
         </main>
 
     <?php elseif ($userType == 'admin') : ?>

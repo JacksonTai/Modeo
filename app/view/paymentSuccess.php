@@ -1,9 +1,9 @@
 <?php
 session_start();
 require '../helper/setUserType.php';
+require '../helper/redirector.php';
 include '../helper/autoloader.php';
 $payment = $_SESSION['payment'];
-$userInfo = $_SESSION['userInfo'];
 ?>
 
 <!DOCTYPE html>
@@ -25,20 +25,28 @@ $userInfo = $_SESSION['userInfo'];
                     <img class="payment-success-icon" src="../../img/icons/done.jpg" alt="">
                </div>
                <div class="payment-success__panel-body">
-                    <div class="payment-success__label-container">
-                         <p class="payment-success__label">Paid by</p>
-                         <p class="payment-success__label">Payment Date</p>
-                         <p class="payment-success__label">Payment Time</p>
-                         <p class="payment-success__label">Amount paid</p>
-                         <p class="payment-success__label">Customer id</p>
-                         <p class="payment-success__label">Order id</p>
-                    </div>
-                    <div class="payment-success__content-container">
+                    <div class="payment-success__item">
+                         <p class="payment-success__label">Paid by: </p>
                          <p class="payment-success__content">Bank Card</p>
+                    </div>
+                    <div class="payment-success__item">
+                         <p class="payment-success__label">Payment Date: </p>
                          <p class="payment-success__content"><?php echo htmlspecialchars($payment['date']); ?></p>
+                    </div>
+                    <div class="payment-success__item">
+                         <p class="payment-success__label">Payment Time: </p>
                          <p class="payment-success__content"><?php echo htmlspecialchars($payment['time']); ?></p>
+                    </div>
+                    <div class="payment-success__item">
+                         <p class="payment-success__label">Amount paid: </p>
                          <p class="payment-success__content"><?php echo htmlspecialchars('RM' . $payment['totalPrice']); ?></p>
+                    </div>
+                    <div class="payment-success__item">
+                         <p class="payment-success__label">Customer id: </p>
                          <p class="payment-success__content"><?php echo htmlspecialchars($userInfo['user_id']); ?></p>
+                    </div>
+                    <div class="payment-success__item">
+                         <p class="payment-success__label">Order id: </p>
                          <p class="payment-success__content"><?php echo htmlspecialchars($payment['orderId']); ?></p>
                     </div>
                </div>

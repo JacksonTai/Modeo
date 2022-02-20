@@ -1,6 +1,7 @@
 <?php
 session_start();
 require '../helper/setUserType.php';
+require '../helper/redirector.php';
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +10,7 @@ require '../helper/setUserType.php';
 <head>
      <?php include '../../templates/head.php' ?>
      <title>
-          Profile - 
+          Profile -
           <?php
           $userType == 'admin' ? $title = 'Modeo (Admin)' : $title = 'Modeo';
           echo $title;
@@ -22,13 +23,15 @@ require '../helper/setUserType.php';
      <?php include '../../templates/header.php' ?>
 
      <main class="profile-main">
-          <div class="profile-content-container">
-               <h2 class="profile-title">Profile</h2>
-               <img class="profile-img" src="../../img/icons/userProfile.jpg" alt="Profile picture">
-               <p class="profile-content"><span>User Id: </span><?php echo htmlspecialchars($userInfo['user_id']); ?></p>
-               <p class="profile-content"><span>Email Address: </span><?php echo htmlspecialchars($userInfo['email']); ?></p>
-               <p class="profile-content"><span>Username: </span><?php echo htmlspecialchars($userInfo['username']); ?></p>
-          </div>
+          <section class="profile-section">
+               <div class="profile-content-container">
+                    <h2 class="profile-title">Profile</h2>
+                    <img class="profile-img" src="../../img/icons/userProfile.jpg" alt="Profile picture">
+                    <p class="profile-content"><span>User Id: </span><?php echo htmlspecialchars($userInfo['user_id']); ?></p>
+                    <p class="profile-content"><span>Email Address: </span><?php echo htmlspecialchars($userInfo['email']); ?></p>
+                    <p class="profile-content"><span>Username: </span><?php echo htmlspecialchars($userInfo['username']); ?></p>
+               </div>
+          </section>
      </main>
 
      <?php include '../../templates/footer.php' ?>

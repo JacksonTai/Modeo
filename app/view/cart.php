@@ -1,6 +1,7 @@
 <?php
 session_start();
 require '../helper/setUserType.php';
+require '../helper/redirector.php';
 include '../helper/autoloader.php';
 
 $cartItem = new controller\cartItem();
