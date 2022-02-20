@@ -3,8 +3,7 @@ A shoe e-commerce website that allows customers to purchase products through a s
 
 ---
 
-[![View Live](https://coveralls.io/repos/github/ntkme/github-buttons/badge.svg?branch=main)](https://coveralls.io/github/ntkme/github-buttons?branch=main)
-[View live](https://modeo.000webhostapp.com/)
+## View Live: https://modeo.000webhostapp.com/
 
 ---
 
