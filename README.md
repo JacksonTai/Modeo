@@ -8,4 +8,3 @@ https://modeo.000webhostapp.com/
 - Mobile-first design strategy
 - JavaScript Ajax
 - PHP OOP concept
-- MVC design pattern
