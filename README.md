@@ -3,8 +3,3 @@ A shoe e-commerce website that allows customers to purchase products via a shopp
 
 ## View Live:
 https://modeo.000webhostapp.com/
- 
-## Developed using: 
-- Mobile-first design strategy
-- JavaScript Ajax
-- OOP concept (PHP)
